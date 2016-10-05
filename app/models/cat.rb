@@ -20,6 +20,8 @@ class Cat < ActiveRecord::Base
   validates :name, presence: true
   validates :sex, presence: true, inclusion: { in: %w(M F), message: "%{value} is not a valid sex" }
 
+  has_many :cat_rental_requests, dependent: :destroy
+
   def age
     Time.now.year - self.birth_date.year
   end

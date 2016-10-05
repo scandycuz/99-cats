@@ -1,0 +1,20 @@
+<h2>New Rental Request</h2>
+
+<%= form_tag(cat_rental_requests_url, method: "POST") do %>
+  <label for='cat_rental_request[cat_id]'>Cat :</label>
+  <select name='cat_rental_request[cat_id]'>
+    <option selected='true' disabled='true'></option>
+    <% Cat.all.each do |cat| %>
+    <option value="<%= cat.id %>" ><%= cat.name %></option>
+    <% end %>
+  </select><br>
+
+  <label for='cat_rental_request[start_date]'>Start date :</label>
+  <input type="date" name="cat_rental_request[start_date]"><br>
+
+  <label for='cat_rental_request[end_date]'>End date :</label>
+  <input type="date" name="cat_rental_request[end_date]"><br>
+
+  <button>Request</button>
+
+<% end %>

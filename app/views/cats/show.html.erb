@@ -17,3 +17,14 @@
     <td><%= @cat.description %></td>
   </tr>
 </table>
+
+<h4>Rental Requests</h4>
+<table>
+  <% requests.each do |request| %>
+  <tr>
+    <td> <%= request.start_date %> to </td>
+    <td><%= request.end_date %></td>
+    <td><%= request.status %></td>
+  </tr>
+  <% end %>
+</table>

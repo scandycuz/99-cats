@@ -53,5 +53,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :cats, only: [:index, :show, :create, :new, :update, :destroy]
+  resources :cats, only: [:index, :show, :create, :new, :edit, :update, :destroy]
+  resources :cat_rental_requests, only: [:index, :show, :create, :new, :edit, :update, :destroy]
 end
